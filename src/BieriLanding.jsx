@@ -1,15 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import logoHead from "./assets/logo head.svg";
-import paraQuien from "./assets/PARA QUIEN.png";
-import gym2 from "./assets/GYM 2.png";
-import gym3 from "./assets/GYM 3.png";
-import gym4 from "./assets/GYM 4.png";
-import gym5 from "./assets/GYM 5.png";
-import gym6 from "./assets/GYM 6.png";
+import paraQuien from "./assets/para-quien.webp";
 import whiteLogo from "./assets/white logo.svg";
 import originalLogo from "./assets/logo completo texto abajo blanco.svg";
-import alejoBlur from "./assets/ale blur.svg";
-import mateoBlur from "./assets/mat blur.svg";
+import alejoImg from "./assets/alejo.webp";
+import mateoImg from "./assets/mateo.webp";
 import heroImg from "./assets/hero.jpg";
 import gym1Img from "./assets/gym1.jpg";
 import gym2Img from "./assets/gym2.jpg";
@@ -125,25 +120,13 @@ const WaIcon = ({ c = "w-5 h-5" }) => (
   </svg>
 );
 
-// ── NavLink with hover state (extracted to respect Rules of Hooks) ──
+// ── NavLink with pure CSS hover (no useState re-renders) ──
 function NavLink({ href, label, onClick }) {
-  const [hovered, setHovered] = useState(false);
   return (
     <a href={href} onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="relative px-4 py-2 rounded-full transition-all duration-300"
-      style={{
-        color: hovered ? '#ffffff' : '#a3a3a3',
-        backgroundColor: hovered ? 'rgba(255,255,255,0.1)' : 'transparent',
-      }}>
+      className="group relative px-4 py-2 rounded-full transition-all duration-300 text-neutral-400 hover:text-white hover:bg-white/10">
       {label}
-      <span className="absolute bottom-1 left-1/2 rounded-full bg-blue-500 transition-all duration-300"
-        style={{
-          height: '2px',
-          width: hovered ? '50%' : '0%',
-          transform: 'translateX(-50%)',
-        }} />
+      <span className="absolute bottom-1 left-1/2 -translate-x-1/2 h-[2px] w-0 group-hover:w-1/2 rounded-full bg-blue-500 transition-all duration-300" />
     </a>
   );
 }
@@ -168,8 +151,8 @@ const FEATURES = [
 ];
 
 const TRAINERS = [
-  { name: "Alejo Barbieri", ig: "@pf.barbieriale", igUrl: "https://www.instagram.com/pf.barbieriale", img: alejoBlur },
-  { name: "Mateo Barbieri", ig: "@mateobarbieripf", igUrl: "https://www.instagram.com/mateobarbieripf", img: mateoBlur },
+  { name: "Alejo Barbieri", ig: "@pf.barbieriale", igUrl: "https://www.instagram.com/pf.barbieriale", img: alejoImg },
+  { name: "Mateo Barbieri", ig: "@mateobarbieripf", igUrl: "https://www.instagram.com/mateobarbieripf", img: mateoImg },
 ];
 
 const AUDIENCE = [
@@ -186,7 +169,7 @@ const STEPS = [
   { n: "4", title: "Seguimiento y ajuste", desc: "Registramos cada sesión. Ajustamos cargas, volumen e intensidad para que progreses semana a semana." },
 ];
 
-const GALLERY_IMAGES = [gym2, gym3, gym4, gym5, gym6];
+const GALLERY_IMAGES = [gym1Img, gym2Img, gym3Img, gym4Img, gym5Img];
 
 // ══════════════════════════════════════════════
 // MAIN
@@ -211,23 +194,34 @@ export default function BieriLanding() {
   useEffect(() => {
     if (isTouch) return;
 
+    let raf;
+    let moving = false;
+
+    const tick = () => {
+      const dx = cursorTarget.current.x - cursorPos.current.x;
+      const dy = cursorTarget.current.y - cursorPos.current.y;
+
+      if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+        cursorPos.current.x += dx * 0.4;
+        cursorPos.current.y += dy * 0.4;
+        if (cursorEl.current) {
+          cursorEl.current.style.left = cursorPos.current.x + "px";
+          cursorEl.current.style.top  = cursorPos.current.y + "px";
+        }
+        raf = requestAnimationFrame(tick);
+      } else {
+        moving = false;
+      }
+    };
+
     const onMove = (e) => {
       cursorTarget.current = { x: e.clientX, y: e.clientY };
+      if (!moving) {
+        moving = true;
+        raf = requestAnimationFrame(tick);
+      }
     };
     window.addEventListener("mousemove", onMove);
-
-    let raf;
-    const lerp = (a, b, t) => a + (b - a) * t;
-    const tick = () => {
-      cursorPos.current.x = lerp(cursorPos.current.x, cursorTarget.current.x, 0.4);
-      cursorPos.current.y = lerp(cursorPos.current.y, cursorTarget.current.y, 0.4);
-      if (cursorEl.current) {
-        cursorEl.current.style.left = cursorPos.current.x + "px";
-        cursorEl.current.style.top  = cursorPos.current.y + "px";
-      }
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
 
     return () => {
       window.removeEventListener("mousemove", onMove);
@@ -364,7 +358,7 @@ export default function BieriLanding() {
         ═══════════════════════════════════════ */}
         <section id="hero" aria-label="Bieri Entrenamiento Personalizado — Gimnasio en Tandil" className="relative min-h-screen flex items-center overflow-hidden">
           <div className="absolute inset-0">
-            <img src={IMG.hero} alt="Gimnasio Bieri Entrenamiento Personalizado en Tandil — espacio de entrenamiento de fuerza con equipamiento profesional" className="w-full h-full object-cover" />
+            <img src={IMG.hero} alt="Gimnasio Bieri Entrenamiento Personalizado en Tandil — espacio de entrenamiento de fuerza con equipamiento profesional" fetchpriority="high" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-neutral-950/30" />
           </div>
 
