@@ -36,8 +36,49 @@
 .bg-orb3 { animation: orb3 30s ease-in-out infinite; }
 .bg-grid  { animation: gridFade 12s ease-in-out infinite; }
 
+/* ── Confetti ──────────────────────────────── */
+.confetti-container {
+  height: 120px;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -10px;
+  left: var(--x);
+  width: 8px;
+  height: 8px;
+  background: var(--color);
+  border-radius: 2px;
+  opacity: 0;
+  animation: confetti-fall var(--duration) ease-in var(--delay) infinite;
+}
+
+.confetti-piece:nth-child(odd) {
+  width: 6px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(120px) rotate(var(--rotation)) scale(0.4);
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .bg-orb1, .bg-orb2, .bg-orb3, .bg-grid, .animate-marquee {
     animation: none;
+  }
+  .confetti-piece {
+    animation: none;
+    opacity: 0;
   }
 }

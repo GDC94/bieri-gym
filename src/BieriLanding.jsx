@@ -3,8 +3,8 @@ import logoHead from "./assets/logo head.svg";
 import paraQuien from "./assets/para-quien.webp";
 import whiteLogo from "./assets/white logo.svg";
 import originalLogo from "./assets/logo completo texto abajo blanco.svg";
-import alejoImg from "./assets/alejo.webp";
-import mateoImg from "./assets/mateo.webp";
+import alejoImg from "./assets/ale blur.svg";
+import mateoImg from "./assets/mat blur.svg";
 import heroImg from "./assets/hero.jpg";
 import gym1Img from "./assets/gym1.jpg";
 import gym2Img from "./assets/gym2.jpg";
@@ -124,7 +124,7 @@ const WaIcon = ({ c = "w-5 h-5" }) => (
 function NavLink({ href, label, onClick }) {
   return (
     <a href={href} onClick={onClick}
-      className="group relative px-4 py-2 rounded-full transition-all duration-300 text-neutral-400 hover:text-white hover:bg-white/10">
+      className="group relative px-4 py-2 rounded-full transition-all duration-300 text-neutral-400 hover:text-white hover:bg-white/10 whitespace-nowrap">
       {label}
       <span className="absolute bottom-1 left-1/2 -translate-x-1/2 h-[2px] w-0 group-hover:w-1/2 rounded-full bg-blue-500 transition-all duration-300" />
     </a>
@@ -170,6 +170,15 @@ const STEPS = [
 ];
 
 const GALLERY_IMAGES = [gym1Img, gym2Img, gym3Img, gym4Img, gym5Img];
+
+const CONFETTI_COLORS = ['#CBFF5F', '#2563eb', '#3b82f6', '#ffffff', '#60a5fa', '#a3e635'];
+const CONFETTI_PIECES = Array.from({ length: 40 }, (_, i) => ({
+  x: `${(i * 2.5 + (i * 7.3 % 10)) % 100}%`,
+  delay: `${(i * 0.37) % 3}s`,
+  duration: `${2.5 + (i * 0.53) % 2}s`,
+  rotation: `${(i * 47) % 360}deg`,
+  color: CONFETTI_COLORS[i % 6],
+}));
 
 // ══════════════════════════════════════════════
 // MAIN
@@ -389,7 +398,7 @@ export default function BieriLanding() {
               </div>
             </R>
             </div>
-            {!cd.done && (
+            {!cd.done ? (
               <R delay={400}>
                 <div className="mt-10 inline-flex items-center justify-center gap-6 sm:gap-8">
                   {[[cd.days, "Días"], [cd.hours, "Hs"], [cd.minutes, "Min"], [cd.seconds, "Seg"]].map(([v, l]) => (
@@ -398,6 +407,26 @@ export default function BieriLanding() {
                       <span className="text-[10px] uppercase tracking-[0.15em] text-neutral-500 mt-1">{l}</span>
                     </div>
                   ))}
+                </div>
+              </R>
+            ) : (
+              <R delay={400}>
+                <div className="mt-10 relative">
+                  {/* Confetti */}
+                  <div className="confetti-container absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+                    {CONFETTI_PIECES.map((p, i) => (
+                      <span key={i} className="confetti-piece" style={{
+                        '--x': p.x,
+                        '--delay': p.delay,
+                        '--duration': p.duration,
+                        '--rotation': p.rotation,
+                        '--color': p.color,
+                      }} />
+                    ))}
+                  </div>
+                  <p className="text-2xl sm:text-3xl font-bold text-center" style={{ color: '#CBFF5F' }}>
+                    Estamos listos, veni a entrenar!
+                  </p>
                 </div>
               </R>
             )}
