@@ -252,7 +252,7 @@ export default function BieriLanding() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white antialiased scroll-smooth" style={{ fontFamily: "'Inter', system-ui, -apple-system, sans-serif" }}>
+    <div className="min-h-screen bg-black text-white antialiased scroll-smooth" style={{ fontFamily: "'Inter', system-ui, -apple-system, sans-serif" }}>
 
       {/* ── ANIMATED BACKGROUND ───────────────── */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
@@ -442,7 +442,7 @@ export default function BieriLanding() {
             <div className="max-w-7xl mx-auto px-5 sm:px-8">
               <R>
                 <p className="text-xs uppercase tracking-[0.2em] text-blue-500 font-medium mb-4 flex items-center gap-3"><span className="w-8 h-px bg-blue-600" /> Nuestra propuesta</p>
-                <h2 className="text-3xl sm:text-5xl font-bold leading-tight max-w-2xl">La diferencia Bieri — Entrenamiento personalizado en Tandil</h2>
+                <h2 className="text-3xl sm:text-5xl font-bold leading-tight max-w-2xl">La diferencia Bieri — Entrenamiento personalizado</h2>
                 <p className="mt-5 text-neutral-400 text-lg leading-relaxed">Cada detalle está pensado para que tu entrenamiento funcione de verdad.</p>
               </R>
               {/* Mobile: grid 2-col / Tablet: horizontal scroll / Desktop: 6-col grid */}
@@ -472,7 +472,7 @@ export default function BieriLanding() {
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <R>
               <p className="text-xs uppercase tracking-[0.2em] text-blue-500 font-medium mb-4 flex items-center gap-3"><span className="w-8 h-px bg-blue-600" /> Quiénes somos</p>
-              <h2 className="text-3xl sm:text-5xl font-bold leading-tight">Entrenadores personales en Tandil</h2>
+              <h2 className="text-3xl sm:text-5xl font-bold leading-tight">Entrenadores personales</h2>
               <p className="mt-5 text-neutral-400 text-lg leading-relaxed">Profesionales con formación y experiencia real en entrenamiento de fuerza, salud y rendimiento deportivo en Tandil.</p>
             </R>
             <div className="mt-16 grid sm:grid-cols-2 gap-8">
@@ -527,7 +527,7 @@ export default function BieriLanding() {
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <R>
               <p className="text-xs uppercase tracking-[0.2em] text-blue-500 font-medium mb-4 flex items-center gap-3"><span className="w-8 h-px bg-blue-600" /> ¿Es para vos?</p>
-              <h2 className="text-3xl sm:text-5xl font-bold leading-tight mb-10">¿Para quién es el gimnasio Bieri en Tandil?</h2>
+              <h2 className="text-3xl sm:text-5xl font-bold leading-tight mb-10">¿Para quién es Bieri?</h2>
             </R>
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Left: Checks */}
@@ -560,7 +560,7 @@ export default function BieriLanding() {
             <R>
               <div className="mb-20">
                 <p className="text-xs uppercase tracking-[0.2em] text-blue-500 font-medium mb-4 inline-flex items-center gap-3"><span className="w-8 h-px bg-blue-600" /> Simple y claro</p>
-                <h2 className="text-3xl sm:text-5xl font-bold leading-tight">Cómo funciona el entrenamiento en Bieri Tandil</h2>
+                <h2 className="text-3xl sm:text-5xl font-bold leading-tight">Como funciona</h2>
               </div>
             </R>
 
@@ -609,7 +609,7 @@ export default function BieriLanding() {
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <R>
               <p className="text-xs uppercase tracking-[0.2em] text-blue-500 font-medium mb-4 flex items-center gap-3"><span className="w-8 h-px bg-blue-600" /> Vení a conocernos</p>
-              <h2 className="text-3xl sm:text-5xl font-bold leading-tight">Gimnasio en Tandil — Rodriguez 1214</h2>
+              <h2 className="text-3xl sm:text-5xl font-bold leading-tight">Dónde estamos</h2>
             </R>
             <div className="mt-16 grid md:grid-cols-2 gap-6">
               <R>
