@@ -6,12 +6,13 @@ import originalLogo from "./assets/logo completo texto abajo blanco.svg";
 import alejoImg from "./assets/ale blur.svg";
 import mateoImg from "./assets/mat blur.svg";
 import heroImg from "./assets/hero.jpg";
-import gym1Img from "./assets/GYM 1.webp";
 import gym2Img from "./assets/GYM 2.webp";
 import gym3Img from "./assets/GYM 3.webp";
 import gym4Img from "./assets/GYM 4.webp";
 import gym5Img from "./assets/GYM 5.webp";
+import gym6Img from "./assets/GYM 6.webp";
 import coach1Img from "./assets/coach1.webp";
+import ctaBgImg from "./assets/blured.jpeg";
 
 /* ─────────────────────────────────────────────
    BIERI ENTRENAMIENTO — Landing Page
@@ -31,11 +32,11 @@ const MAPS = "https://www.google.com/maps/search/?api=1&query=Rodriguez+1214+Tan
 // Placeholder images (replace with real photos)
 const IMG = {
   hero: heroImg,
-  gym1: gym1Img,
   gym2: gym2Img,
   gym3: gym3Img,
   gym4: gym4Img,
   gym5: gym5Img,
+  gym6: gym6Img,
   coach1: coach1Img,
   coach2: "https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?w=600&q=80",
   training: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=1200&q=80",
@@ -169,7 +170,7 @@ const STEPS = [
   { n: "4", title: "Seguimiento y ajuste", desc: "Registramos cada sesión. Ajustamos cargas, volumen e intensidad para que progreses semana a semana." },
 ];
 
-const GALLERY_IMAGES = [gym1Img, gym2Img, gym3Img, gym4Img, gym5Img];
+const GALLERY_IMAGES = [gym6Img, gym2Img, gym3Img, gym4Img, gym5Img];
 
 const CONFETTI_COLORS = ['#CBFF5F', '#2563eb', '#3b82f6', '#ffffff', '#60a5fa', '#a3e635'];
 const CONFETTI_PIECES = Array.from({ length: 40 }, (_, i) => ({
@@ -442,7 +443,7 @@ export default function BieriLanding() {
             <div className="max-w-7xl mx-auto px-5 sm:px-8">
               <R>
                 <p className="text-xs uppercase tracking-[0.2em] text-blue-500 font-medium mb-4 flex items-center gap-3"><span className="w-8 h-px bg-blue-600" /> Nuestra propuesta</p>
-                <h2 className="text-3xl sm:text-5xl font-bold leading-tight max-w-2xl">La diferencia Bieri — Entrenamiento personalizado</h2>
+                <h2 className="text-3xl sm:text-5xl font-bold leading-tight max-w-2xl">La diferencia Bieri</h2>
                 <p className="mt-5 text-neutral-400 text-lg leading-relaxed">Cada detalle está pensado para que tu entrenamiento funcione de verdad.</p>
               </R>
               {/* Mobile: grid 2-col / Tablet: horizontal scroll / Desktop: 6-col grid */}
@@ -472,8 +473,8 @@ export default function BieriLanding() {
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <R>
               <p className="text-xs uppercase tracking-[0.2em] text-blue-500 font-medium mb-4 flex items-center gap-3"><span className="w-8 h-px bg-blue-600" /> Quiénes somos</p>
-              <h2 className="text-3xl sm:text-5xl font-bold leading-tight">Entrenadores personales</h2>
-              <p className="mt-5 text-neutral-400 text-lg leading-relaxed">Profesionales con formación y experiencia real en entrenamiento de fuerza, salud y rendimiento deportivo en Tandil.</p>
+              <h2 className="text-3xl sm:text-5xl font-bold leading-tight">Los profes</h2>
+              <p className="mt-5 text-neutral-400 text-lg leading-relaxed">Entrenadores con formación y experiencia en fuerza, salud y rendimiento.</p>
             </R>
             <div className="mt-16 grid sm:grid-cols-2 gap-8">
               {TRAINERS.map(({ name, ig, igUrl, img }, i) => (
@@ -659,7 +660,7 @@ export default function BieriLanding() {
         ═══════════════════════════════════════ */}
         <section className="relative py-32 sm:py-40 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={IMG.gym2} alt="" width={1200} height={600} loading="lazy" className="w-full h-full object-cover" aria-hidden="true" />
+            <img src={ctaBgImg} alt="" width={1200} height={600} loading="lazy" className="w-full h-full object-cover" aria-hidden="true" />
             <div className="absolute inset-0 bg-neutral-950/85 backdrop-blur-sm" />
           </div>
           <div className="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
