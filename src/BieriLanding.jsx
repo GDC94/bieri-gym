@@ -293,7 +293,7 @@ export default function BieriLanding() {
       <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 backdrop-blur-xl ${scrolled ? "bg-neutral-950/70 shadow-lg shadow-black/20" : "bg-neutral-950/40"}`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-8 py-4">
           <a href="#hero" onClick={(e) => scrollTo(e, '#hero')} aria-label="Bieri — Inicio" className="relative z-10">
-            <img src={logoHead} alt="Bieri Entrenamiento" className="h-10 sm:h-12 w-auto brightness-0 invert" />
+            <img src={logoHead} alt="Bieri Entrenamiento" width={120} height={48} className="h-10 sm:h-12 w-auto brightness-0 invert" />
           </a>
 
           <nav className="hidden md:flex items-center gap-1 text-[13px] tracking-wide text-neutral-400">
@@ -327,7 +327,7 @@ export default function BieriLanding() {
         {/* Header row con logo y cruz de cierre */}
         <div className="h-[68px] shrink-0 flex items-center justify-between px-5">
           <a href="#hero" onClick={(e) => scrollTo(e, '#hero')} aria-label="Bieri — Inicio">
-            <img src={logoHead} alt="Bieri" className="h-10 w-auto brightness-0 invert" />
+            <img src={logoHead} alt="Bieri" width={100} height={40} className="h-10 w-auto brightness-0 invert" />
           </a>
           <button onClick={() => setMenu(false)} className="p-2 text-neutral-400 hover:text-white transition-colors" aria-label="Cerrar menú">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-6 h-6">
@@ -367,14 +367,14 @@ export default function BieriLanding() {
         ═══════════════════════════════════════ */}
         <section id="hero" aria-label="Bieri Entrenamiento Personalizado — Gimnasio en Tandil" className="relative min-h-screen flex items-center overflow-hidden">
           <div className="absolute inset-0">
-            <img src={IMG.hero} alt="Gimnasio Bieri Entrenamiento Personalizado en Tandil — espacio de entrenamiento de fuerza con equipamiento profesional" fetchpriority="high" className="w-full h-full object-cover" />
+            <img src={IMG.hero} alt="Gimnasio Bieri Entrenamiento Personalizado en Tandil — espacio de entrenamiento de fuerza con equipamiento profesional" fetchpriority="high" width={1920} height={1080} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-neutral-950/30" />
           </div>
 
           <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 text-center pt-24 pb-16">
             <div className="backdrop-blur-sm rounded-3xl px-8 sm:px-12 py-8 sm:py-12 border border-white/10" style={{ background: "rgba(200,200,200,0.08)", borderColor: "rgba(255,255,255,0.12)" }}>
             <R delay={0}>
-              <img src={originalLogo} alt="Logo de Bieri Entrenamiento Personalizado — Gimnasio en Tandil" className="w-auto max-w-[220px] sm:max-w-[280px] h-auto mx-auto mb-8" style={{ objectFit: "contain" }} />
+              <img src={originalLogo} alt="Logo de Bieri Entrenamiento Personalizado — Gimnasio en Tandil" width={280} height={120} className="w-auto max-w-[220px] sm:max-w-[280px] h-auto mx-auto mb-8" style={{ objectFit: "contain" }} />
             </R>
             <R delay={100}>
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight">
@@ -481,7 +481,7 @@ export default function BieriLanding() {
                   <div className="relative rounded-3xl overflow-hidden border border-neutral-800/40 bg-neutral-900/20 hover:border-neutral-700/50 transition-all duration-500 group">
                     {/* Image with darkened bg */}
                     <div className="relative flex items-end justify-center pt-8 px-8" style={{ background: "rgba(10,10,10,0.55)" }}>
-                      <img src={img} alt={`${name} — Entrenador personal en Bieri Tandil`} loading="lazy" className="w-auto max-h-[360px] object-contain relative z-10" style={{ filter: "brightness(0.88)" }} />
+                      <img src={img} alt={`${name} — Entrenador personal en Bieri Tandil`} width={320} height={360} loading="lazy" className="w-auto max-h-[360px] object-contain relative z-10" style={{ filter: "brightness(0.88)" }} />
                     </div>
                     {/* Info strip */}
                     <div className="px-7 py-6 flex items-center justify-between border-t border-neutral-800/40">
@@ -512,7 +512,7 @@ export default function BieriLanding() {
             {[...Array(2)].map((_, pass) =>
               GALLERY_IMAGES.map((src, i) => (
                 <div key={`${pass}-${i}`} className="h-full w-[40vw] sm:w-[28vw] shrink-0">
-                  <img src={src} alt={`Instalaciones del gimnasio Bieri en Tandil — espacio de entrenamiento ${i + 1}`} loading="lazy" className="w-full h-full object-cover" />
+                  <img src={src} alt={`Instalaciones del gimnasio Bieri en Tandil — espacio de entrenamiento ${i + 1}`} width={400} height={288} loading="lazy" className="w-full h-full object-cover" />
                 </div>
               ))
             )}
@@ -546,7 +546,7 @@ export default function BieriLanding() {
 
               {/* Right: Image */}
               <R delay={200}>
-                <img src={paraQuien} alt="Entrenamiento personalizado en el gimnasio Bieri de Tandil — para todos los niveles" loading="lazy" className="w-auto rounded-3xl object-contain mx-auto max-h-[500px]" />
+                <img src={paraQuien} alt="Entrenamiento personalizado en el gimnasio Bieri de Tandil — para todos los niveles" width={500} height={500} loading="lazy" className="w-auto rounded-3xl object-contain mx-auto max-h-[500px]" />
               </R>
             </div>
           </div>
@@ -659,7 +659,7 @@ export default function BieriLanding() {
         ═══════════════════════════════════════ */}
         <section className="relative py-32 sm:py-40 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={IMG.gym2} alt="" loading="lazy" className="w-full h-full object-cover" aria-hidden="true" />
+            <img src={IMG.gym2} alt="" width={1200} height={600} loading="lazy" className="w-full h-full object-cover" aria-hidden="true" />
             <div className="absolute inset-0 bg-neutral-950/85 backdrop-blur-sm" />
           </div>
           <div className="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 text-center">
@@ -667,7 +667,7 @@ export default function BieriLanding() {
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Tu lugar te está<br /><span style={{ color: "rgb(203,255,95)" }}>esperando</span></h2>
             </R>
             <R delay={200}>
-              <img src={whiteLogo} alt="Bieri Entrenamiento" className="h-24 sm:h-32 w-auto mx-auto mt-8" />
+              <img src={whiteLogo} alt="Bieri Entrenamiento" width={200} height={80} className="h-24 sm:h-32 w-auto mx-auto mt-8" />
             </R>
             <R delay={300}>
               <a href={WA_URL} target="_blank" rel="noopener noreferrer"
@@ -684,7 +684,7 @@ export default function BieriLanding() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-              <img src={whiteLogo} alt="Bieri Entrenamiento" className="h-16 w-auto" />
+              <img src={whiteLogo} alt="Bieri Entrenamiento" width={160} height={64} className="h-16 w-auto" />
               <address className="text-xs text-neutral-500 mt-1 not-italic">Entrenamiento Personalizado · Rodriguez 1214, Tandil, Buenos Aires, Argentina</address>
             </div>
             <div className="flex items-center gap-5">
