@@ -6,11 +6,11 @@ import originalLogo from "./assets/logo completo texto abajo blanco.svg";
 import alejoImg from "./assets/ale blur.svg";
 import mateoImg from "./assets/mat blur.svg";
 import heroImg from "./assets/hero.jpg";
-import gym1Img from "./assets/gym1.jpg";
-import gym2Img from "./assets/gym2.jpg";
-import gym3Img from "./assets/gym3.jpg";
-import gym4Img from "./assets/gym4.jpg";
-import gym5Img from "./assets/gym5.jpg";
+import gym1Img from "./assets/GYM 1.webp";
+import gym2Img from "./assets/GYM 2.webp";
+import gym3Img from "./assets/GYM 3.webp";
+import gym4Img from "./assets/GYM 4.webp";
+import gym5Img from "./assets/GYM 5.webp";
 import coach1Img from "./assets/coach1.webp";
 
 /* ─────────────────────────────────────────────
@@ -290,7 +290,7 @@ export default function BieriLanding() {
       )}
 
       {/* ── NAV ───────────────────────────────── */}
-      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 backdrop-blur-xl ${scrolled ? "bg-neutral-950/70 border-b border-white/5 shadow-lg shadow-black/20" : "bg-neutral-950/40"}`}>
+      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 backdrop-blur-xl ${scrolled ? "bg-neutral-950/70 shadow-lg shadow-black/20" : "bg-neutral-950/40"}`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-8 py-4">
           <a href="#hero" onClick={(e) => scrollTo(e, '#hero')} aria-label="Bieri — Inicio" className="relative z-10">
             <img src={logoHead} alt="Bieri Entrenamiento" className="h-10 sm:h-12 w-auto brightness-0 invert" />
